@@ -12,13 +12,17 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var nounLabel: UILabel!
+    @IBOutlet weak var karenText: UILabel!
     
     var detailText = " "
     var nounText = " "
+    var karenT = " "
     override func viewDidLoad() {
         super.viewDidLoad()
         textLabel.text = detailText
         nounLabel.text = nounText
+        karenText.text = karenT
+        karenText.font = UIFont(name: "knu", size: 35)
         // Do any additional setup after loading the view.
     }
 

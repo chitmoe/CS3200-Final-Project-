@@ -14,19 +14,17 @@ class ViewController: UIViewController {
     
     static var lines = [String]()
     static var lines2 = [String]()
-    var searchStatue = false
+    static var lines3 = [String]()
+    var searchStatue: Bool = false
     var filtered: [String] = []
     var selectedIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        readFile(filename: "example", type: "txt")
-        readFile2(filename: "example1", type: "txt")
+        readFile(filename: "English", type: "txt")
+        readFile2(filename: "Howtosay", type: "txt")
+        readFile3(filename: "Karen", type: "txt")
         print(ViewController.lines.count)
-        searchBar.delegate = self
-        tableView.delegate = self
-        tableView.dataSource = self
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -36,6 +34,7 @@ class ViewController: UIViewController {
             detailVC.detailText = ViewController.lines[selectedIndex]
             detailVC.title = ViewController.lines[selectedIndex]
             detailVC.nounText = ViewController.lines2[selectedIndex]
+            detailVC.karenT = ViewController.lines3[selectedIndex]
         }
     }
     
@@ -44,7 +43,6 @@ class ViewController: UIViewController {
         do
         {
             let contents = try String(contentsOfFile: filepath!)
-            print("File contains: ", contents)
             ViewController.lines = contents.components(separatedBy: "\n")
         }
         catch
@@ -57,8 +55,19 @@ class ViewController: UIViewController {
         do
         {
             let contents = try String(contentsOfFile: filepath!)
-            print("File contains: ", contents)
             ViewController.lines2 = contents.components(separatedBy: "\n")
+        }
+        catch
+        {
+            // contents could not be loaded
+        }
+    }
+    func readFile3(filename: String, type: String) {
+        let filepath = Bundle.main.path(forResource: filename, ofType: type)
+        do
+        {
+            let contents = try String(contentsOfFile: filepath!)
+            ViewController.lines3 = contents.components(separatedBy: "\n")
         }
         catch
         {
@@ -83,7 +92,6 @@ extension ViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchStatue = false
-        print("searchText \(searchBar.text)")
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -124,7 +132,10 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         if(searchStatue){
+            selectedIndex = indexPath.row
             cell.textLabel?.text = filtered[indexPath.row]
+            //print(indexPath.row)
+            
         } else {
             cell.textLabel?.text = ViewController.lines[indexPath.row];
         }

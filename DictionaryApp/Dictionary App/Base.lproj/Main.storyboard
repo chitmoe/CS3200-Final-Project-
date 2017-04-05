@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Karen Dictionary-->
+        <!--Dictionary-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Dictionary_App" customModuleProvider="target" sceneMemberID="viewController">
@@ -67,7 +67,7 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="REG-ta-qUH" secondAttribute="bottom" id="ya6-QO-xMi"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Karen Dictionary" id="aeI-Li-of0"/>
+                    <navigationItem key="navigationItem" title="Dictionary" id="aeI-Li-of0"/>
                     <connections>
                         <outlet property="searchBar" destination="k8d-bN-bTE" id="ud0-9D-ERV"/>
                         <outlet property="tableView" destination="REG-ta-qUH" id="TiS-L2-cAb"/>
@@ -91,13 +91,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7CJ-Jm-n9C">
-                                <rect key="frame" x="-0.5" y="64" width="375" height="21"/>
+                                <rect key="frame" x="-0.5" y="89" width="375" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W2q-xy-tpa">
-                                <rect key="frame" x="-0.5" y="171" width="375" height="21"/>
+                                <rect key="frame" x="-0.5" y="196" width="375" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xz9-op-xkJ">
+                                <rect key="frame" x="-0.5" y="64" width="375" height="667"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -106,28 +112,33 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="7CJ-Jm-n9C" firstAttribute="centerX" secondItem="5t8-6E-cEy" secondAttribute="centerX" id="8AM-Rv-tjJ"/>
-                            <constraint firstItem="7CJ-Jm-n9C" firstAttribute="top" secondItem="GNn-hl-pZX" secondAttribute="bottom" id="Iar-WR-leQ"/>
+                            <constraint firstItem="7CJ-Jm-n9C" firstAttribute="top" secondItem="GNn-hl-pZX" secondAttribute="bottom" constant="25" id="Iar-WR-leQ"/>
                             <constraint firstItem="W2q-xy-tpa" firstAttribute="top" secondItem="7CJ-Jm-n9C" secondAttribute="bottom" constant="86" id="K1S-MU-Pqw"/>
                             <constraint firstItem="W2q-xy-tpa" firstAttribute="width" secondItem="7CJ-Jm-n9C" secondAttribute="width" id="Xzh-Tj-SZ0"/>
                             <constraint firstItem="7CJ-Jm-n9C" firstAttribute="width" secondItem="5t8-6E-cEy" secondAttribute="width" id="bR3-bW-oH5"/>
+                            <constraint firstItem="Xz9-op-xkJ" firstAttribute="top" secondItem="GNn-hl-pZX" secondAttribute="bottom" id="guJ-BN-bxQ"/>
                             <constraint firstItem="W2q-xy-tpa" firstAttribute="centerX" secondItem="7CJ-Jm-n9C" secondAttribute="centerX" id="i86-gD-9lx"/>
+                            <constraint firstItem="Xz9-op-xkJ" firstAttribute="height" secondItem="5t8-6E-cEy" secondAttribute="height" id="m0p-fq-TLU"/>
+                            <constraint firstItem="Xz9-op-xkJ" firstAttribute="width" secondItem="5t8-6E-cEy" secondAttribute="width" id="q1Z-cR-8pK"/>
+                            <constraint firstItem="Xz9-op-xkJ" firstAttribute="centerX" secondItem="5t8-6E-cEy" secondAttribute="centerX" id="wHL-sS-laG"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="karenText" destination="Xz9-op-xkJ" id="LFG-vo-aGb"/>
                         <outlet property="nounLabel" destination="W2q-xy-tpa" id="L3i-nV-leL"/>
                         <outlet property="textLabel" destination="7CJ-Jm-n9C" id="Odd-Z5-TvN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ay9-0H-UX3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1707" y="663"/>
+            <point key="canvasLocation" x="1706.4000000000001" y="662.51874062968523"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="IVx-kI-EId">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eBa-HX-O53" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2Ro-ZP-ag4">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="2Ro-ZP-ag4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
