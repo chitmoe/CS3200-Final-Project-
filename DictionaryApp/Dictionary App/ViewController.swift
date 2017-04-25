@@ -47,7 +47,7 @@ class ViewController: UIViewController {
         }
         catch
         {
-            // contents could not be loaded
+            
         }
     }
     func readFile2(filename: String, type: String) {
@@ -59,7 +59,7 @@ class ViewController: UIViewController {
         }
         catch
         {
-            // contents could not be loaded
+            
         }
     }
     func readFile3(filename: String, type: String) {
@@ -95,7 +95,7 @@ extension ViewController: UISearchBarDelegate {
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        filtered = ViewController.lines.filter({ (text) -> Bool in
+        filtered = ViewController.lines.filter ({ (text) -> Bool in
             let tmp: NSString = text as NSString
             let range = tmp.range(of: searchText, options: NSString.CompareOptions.caseInsensitive)
             return range.location != NSNotFound
@@ -133,11 +133,11 @@ extension ViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         if(searchStatue){
             selectedIndex = indexPath.row
-            cell.textLabel?.text = filtered[indexPath.row]
-            //print(indexPath.row)
+            cell.textLabel?.text = filtered[selectedIndex]
             
         } else {
             cell.textLabel?.text = ViewController.lines[indexPath.row];
+            
         }
         return cell
     }
