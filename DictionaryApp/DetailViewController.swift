@@ -19,8 +19,12 @@ class DetailViewController: UIViewController {
     var karenT = " "
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.black
+        textLabel.textColor = UIColor.white
         textLabel.text = detailText
+        nounLabel.textColor = UIColor.white
         nounLabel.text = nounText
+        karenText.textColor = UIColor.white
         karenText.text = karenT
         karenText.font = UIFont(name: "knu", size: 35)
         // Do any additional setup after loading the view.

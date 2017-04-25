@@ -16,8 +16,10 @@ class ViewController: UIViewController {
     static var lines2 = [String]()
     static var lines3 = [String]()
     var searchStatue: Bool = false
+    var saveSearch: [String] = []
     var filtered: [String] = []
     var selectedIndex = 0
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,6 +76,10 @@ class ViewController: UIViewController {
             // contents could not be loaded
         }
     }
+    
+    @IBAction func unwindToMain(_sender: UIStoryboardSegue) {
+        
+    }
 }
 
 extension ViewController: UISearchBarDelegate {
@@ -91,6 +97,9 @@ extension ViewController: UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        saveSearch.append(searchBar.text!)
+        
+        print(saveSearch)
         searchStatue = false
     }
     
